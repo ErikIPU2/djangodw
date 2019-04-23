@@ -18,3 +18,16 @@ def editar(request, id):
         return HttpResponseRedirect(reverse('tarefas:index'))
 
     return render(request, 'tarefas/editar.html', {'tarefa': tarefa})
+
+def adicionar(request):
+    if request.POST:
+        nome = request.POST['nome']
+        descricao = request.POST['descricao']
+        Tarefa.objects.create(nome=nome, descricao=descricao)
+        return HttpResponseRedirect(reverse('tarefas:index'))
+    return render(request, 'tarefas/adicionar.html')
+
+def remover(request, id):
+    tarefa = get_object_or_404(Tarefa, pk=id)
+    tarefa.delete()
+    return  HttpResponseRedirect(reverse('tarefas:index'))

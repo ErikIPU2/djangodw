@@ -14,9 +14,9 @@
 
         <nav class=" red lighten-1">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Tarefas</a>
+                <a href="{% url 'tarefas:index' %}" class="brand-logo">Tarefas</a>
                 <ul class="right">
-                    <li><a href="#"><i class="material-icons left">add</i>Adicionar</a></li>
+                    <li><a href="{% url 'tarefas:adicionar' %}"><i class="material-icons left">add</i>Adicionar</a></li>
                 </ul>
             </div>
         </nav>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="card-action">
                                 <a href="{% url 'tarefas:editar' tarefa.id %}">Editar</a>
-                                <a href="#">Excluir</a>
+                                <a href="{% url 'tarefas:remover' tarefa.id %}">Excluir</a>
                             </div>
                         </div>
                    </div>

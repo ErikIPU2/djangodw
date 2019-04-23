@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'paginaInicial.apps.PaginainicialConfig',
     'tarefas.apps.TarefasConfig',
     'tabuada.apps.TabuadaConfig',
     'django.contrib.admin',

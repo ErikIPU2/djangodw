@@ -1,0 +1,63 @@
+{# Carega os arquivos staticos (css, js, etc...) #}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trabalho de DW</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="{% static 'paginaInicial/css/materialize.min.css' %}"  media="screen,projection"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="center-align">
+                <h3>Trabalho DW:</h3>
+                <h5>Django</h5>
+                <div class="divider"></div>
+                <br>
+                <h6>Tabuada:</h6>
+                <br>
+
+                <p>Gerada</p>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <input type="number" id="tabuadaGerada">
+                        <label for="tabuadaGerada">numero</label>
+                    </div>
+                </div>
+                <a class="waves-effect waves-light btn" onclick="toTabuadaGerada()">Acessar</a>
+
+                <br><br>
+                <div class="divider"></div>
+                <p>Template:</p>
+
+                <div class="row">
+                    <div class="input-field col s3 offset-s3">
+                        <input type="number" id="tabuadaTemplate">
+                        <label for="tabuadaTemplate">numero</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input type="number" id="tabuadaTemplateVezes">
+                        <label for="tabuadaTemplateVezes">numero de vezes(Opcional)</label>
+                    </div>
+                </div>
+                <a class="waves-effect waves-light btn" onclick="toTabuadaTemplate()">Acessar</a>
+
+                <br><br>
+                <div class="divider"></div>
+                <h6>Tarefas:</h6>
+                <a class="waves-effect waves-light btn" onclick="toTarefas()">Acessar</a>
+
+
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="{% static 'paginaInicial/js/materialize.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'paginaInicial/js/index.js'%}"></script>
+    </body>
+</html>

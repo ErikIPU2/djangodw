@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Importa o arquivo de urls do app tabuada
     path('tabuada/', include('tabuada.urls')),
+    path('tarefas/', include('tarefas.urls'))
 ]

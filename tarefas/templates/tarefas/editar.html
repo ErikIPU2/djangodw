@@ -1,0 +1,51 @@
+{# Carega os arquivos staticos (css, js, etc...) #}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editar {{ tarefa.nome }}</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="{% static 'tarefas/css/materialize.min.css' %}"  media="screen,projection"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+
+        <nav class=" red lighten-1">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Tarefas</a>
+                <ul class="right">
+                    <li><a href="#"><i class="material-icons left">add</i>Adicionar</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="center-align">
+                <br>
+                <div class="row">
+                    <form method="post" action="{% url 'tarefas:editar' tarefa.id %}" class="col s6 offset-s3">
+                        {% csrf_token %}
+                        <div class="input-field">
+                            <input id="nome" name="nome" type="text" value="{{ tarefa.nome }}">
+                            <label for="nome">Nome</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="descricao" name="descricao" class="materialize-textarea">{{ tarefa.descricao }}</textarea>
+                            <label for="descricao">Descrição</label>
+                        </div>
+
+                        <button class="btn waves-effect waves-light red" type="submit" name="action">Editar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="{% static 'tarefas/js/materialize.min.js' %}"></script>
+    </body>
+</html>

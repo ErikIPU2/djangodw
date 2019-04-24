@@ -1,3 +1,4 @@
+// Redireciona para a pagina da tabuada gerada
 function toTabuadaGerada() {
     let valor = document.getElementById("tabuadaGerada").value
     if (valor) {
@@ -5,6 +6,7 @@ function toTabuadaGerada() {
     }
 }
 
+// Redireciona para a pagina com template
 function toTabuadaTemplate() {
     let valor = document.getElementById("tabuadaTemplate").value
     let vezes = document.getElementById("tabuadaTemplateVezes").value
@@ -20,6 +22,7 @@ function toTabuadaTemplate() {
 
 }
 
+// Redireciona para a pagina de tarefas
 function toTarefas() {
     location.href = "tarefas"
 }

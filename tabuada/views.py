@@ -43,6 +43,7 @@ def template(request, numero):
         'range': range(0, 11)
     })
 
+# Renderizaça do mesmo template só que com um atributo a mais
 def template2(request, numero, vezes):
     return render(request, 'tabuada/tabuada.html', {
         'numero' : numero,
